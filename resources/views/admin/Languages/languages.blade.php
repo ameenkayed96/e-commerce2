@@ -30,11 +30,11 @@
                             @isset($languages)
                             @foreach ($languages as $lang)
                             <tr>
-                                <td>{{$lang['name']}}</td>
+                                <td>{{$lang->name}}</td>
 
-                                <td>$ 6979.78</td>
-                                <td>0.2</td>
-                                <td>0.2</td>
+                                <td>{{$lang->abbr}}</td>
+                                <td>{{$lang->direction}}</td>
+                                <td>{{$lang->active}}</td>
                                 <td style="width: 200px;">
                                     <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
                                     &nbsp;
