@@ -13,9 +13,21 @@ use App\Http\Controllers\loginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['namespace'=>'App\Http\Controllers\admin','middleware' => 'auth:admin'],function(){
+
+
+define('PAGINATION-COUNT',10);
+Route::group(['namespace'=>'App\Http\Controllers\admin'],function(){
     Route::get('/test', function(){
         dd("**************");
+
+    });
+
+    //-----------------------------Languages Routes----------------------------
+    Route::group(['prefix' => 'languages'] , function(){
+       Route::get('/','LanguagesController@index') -> name('admin.languages');
+    // Route::get('/',function(){
+    //     dd("*************************");
+    // }) -> name('admin.languages');
 
     });
 });
@@ -26,7 +38,7 @@ Route::group(['namespace'=>'App\Http\Controllers\admin'],function(){
     Route::get('login','loginController@getlogin');
     Route::post('login','loginController@login') -> name('admin.login');
     Route::get('dashboard', function () {
-//dd("******");
+return view('admin.dashboard');
     })->name('admin.dashboard');
 });
 
