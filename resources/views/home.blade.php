@@ -1,23 +1,11 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="zxx">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<!-- Mirrored from templates.hibootstrap.com/grin/default/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Mar 2021 09:08:52 GMT -->
+@include('site_includes.header')
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+@yield('content')
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+@include('site_includes.footer')
+<!-- Mirrored from templates.hibootstrap.com/grin/default/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Mar 2021 09:09:27 GMT -->
+</html>

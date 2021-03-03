@@ -10,7 +10,7 @@
                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                 <div class="heading-elements">
                     <td>
-                        <button class="btn btn-sm round btn-danger btn-glow"><i class="la la-close font-medium-1"></i> حذف الجميع</button>
+                        <a class="btn btn-sm round btn-danger btn-glow"  href="{{url('/admin/languages/deleteAll')}}"><i class="la la-close font-medium-1"></i> حذف الجميع</a>
                     </td>
                 </div>
             </div>
@@ -36,12 +36,12 @@
                                 <td>{{$lang->direction}}</td>
                                 <td>{{$lang->active}}</td>
                                 <td style="width: 200px;">
-                                    <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
+                                    <a class="btn btn-sm round btn-outline-danger" href="{{url('/admin/languages/delete/' . $lang->id )}}"> حذف</a>
                                     &nbsp;
                                     &nbsp;
                                     &nbsp;
                                     &nbsp;
-                                    <button class="btn btn-sm round btn-outline-danger"> Edit</button>
+                                    <a class="btn btn-sm round btn-outline-danger" href="{{url('/admin/languages/edit/' . $lang->id )}}"> تعديل</a>
                                 </td>
                             </tr>
 

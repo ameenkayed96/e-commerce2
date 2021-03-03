@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Site\SiteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home') -> middleware('auth');
+Route::get('/admin', [App\Http\Controllers\admin\dashboardController::class, 'admin'])->name('admin.dashboard');
+Route::get('/about',[App\Http\Controllers\Site\SiteController::class, 'about'])->name('about') -> middleware('auth');
+Route::get('/services_details',[App\Http\Controllers\Site\SiteController::class, 'services_details'])->name('ser_det') -> middleware('auth');

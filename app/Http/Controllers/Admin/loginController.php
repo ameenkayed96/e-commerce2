@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Hash;
 class loginController extends Controller
 {
    function getlogin(){
-    //    dd('sssss');
        return view('admin.login');
    }
 
