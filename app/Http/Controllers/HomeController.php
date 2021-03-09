@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Dentist;
+
 
 class HomeController extends Controller
 {
@@ -11,10 +13,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -24,7 +22,9 @@ class HomeController extends Controller
     public function index()
     {
         // dd(auth()->user());.0
-        return view('site.index');
+        $dentists = Dentist::all();
+    //dd($dentists[0]->appointment);
+        return view('site.index',compact('dentists'));
     }
 
 }

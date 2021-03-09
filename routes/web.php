@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home') -> middleware('auth');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [App\Http\Controllers\admin\dashboardController::class, 'admin'])->name('admin.dashboard');
-Route::get('/about',[App\Http\Controllers\Site\SiteController::class, 'about'])->name('about') -> middleware('auth');
-Route::get('/services_details',[App\Http\Controllers\Site\SiteController::class, 'services_details'])->name('ser_det') -> middleware('auth');
+Route::get('/about',[App\Http\Controllers\Site\SiteController::class, 'about'])->name('about');
+Route::get('/services_details',[App\Http\Controllers\Site\SiteController::class, 'services_details'])->name('ser_det');
+Route::get('/appointment',[App\Http\Controllers\Site\SiteController::class, 'appointment'])->name('appointment') -> middleware('auth');
+Route::post('/booking',[App\Http\Controllers\Site\SiteController::class, 'bookings'])->name('booking');

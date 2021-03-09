@@ -1,9 +1,8 @@
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta charset="utf-8">
+
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -57,7 +56,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <title>Grin - Dentist & Dental Clinic HTML Template</title>
+    <title>Dental Clinic</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     </head>
 
@@ -70,12 +69,12 @@
         <div class="col-lg-6 col-md-12">
         <ul class="top-header-information">
         <li>
-        <i class='bx bxs-map'></i>
-        35 West Dental Street, California 1004
+        <i class='bx bx-user'></i>
+        {{Auth::User()->name}}
         </li>
         <li>
         <i class='bx bx-envelope-open'></i>
-        <a href="https://templates.hibootstrap.com/cdn-cgi/l/email-protection#5f2c2a2f2f302d2b1f382d3631713c3032"><span class="__cf_email__" data-cfemail="bdcec8cdcdd2cfc9fddacfd4d393ded2d0">[email&#160;protected]</span></a>
+        <a><span class="__cf_email__" data-cfemail="bdcec8cdcdd2cfc9fddacfd4d393ded2d0">{{Auth::User()->email}}</span></a>
         </li>
         </ul>
         </div>
@@ -267,7 +266,7 @@
         </div>
         <div class="option-item">
         <div class="navbar-btn">
-        <a href="appointment.html" class="default-btn">Book Appointment</a>
+        <a href="{{url('/appointment')}}" class="default-btn">Book Appointment</a>
         </div>
         </div>
         </div>
@@ -296,7 +295,7 @@
         </div>
         <div class="option-item">
         <div class="navbar-btn">
-        <a href="appointment.html" class="default-btn">Book Appointment</a>
+        <a href="{{url('/apointment')}}" class="default-btn">Book Appointment</a>
         </div>
         </div>
         </div>

@@ -35,7 +35,7 @@
     <h1>The World Best<span>Dental Specialist</span> Treatment</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <div class="slides-btn">
-    <a href="appointment.html" class="default-btn">Book Appointment</a>
+    <a href="{{url('/appointment')}}" class="default-btn">Book Appointment</a>
     <a href="dentist.html" class="optional-btn">Consult A Dentist</a>
     </div>
     </div>
@@ -376,21 +376,22 @@
     <div class="appointment-inner-box">
     <div class="appointment-form">
     <h4><i class="flaticon-calendar"></i> Make An Appointment</h4>
-    <form>
-    <div class="form-group">
-    <input type="text" class="form-control" placeholder="Name">
-    </div>
-    <div class="form-group">
-    <input type="text" class="form-control" placeholder="Email">
-    </div>
-    <div class="form-group">
-    <input type="text" class="form-control" placeholder="Phone">
-    </div>
-     <div class="form-group">
-    <input type="text" class="form-control" placeholder="Date">
-    </div>
-    <button type="submit" class="default-btn">Book Appointment</button>
-    </form>
+        <form method="POST" action="{{url('/booking')}}">
+            @csrf
+            <div class="form-group">
+            <input type="text" name="name" value="{{Auth::User()->name}}" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+            <input type="text" name="email" value="{{Auth::User()->email}}" readonly class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+            <input type="text" name="phone" value="{{Auth::User()->phone}}" class="form-control" placeholder="Phone">
+            </div>
+            <div class="form-group">
+            <input type="text" name="date" class="form-control" placeholder="Date">
+            </div>
+            <button type="submit" class="default-btn">Book Appointment</button>
+        </form>
     </div>
     </div>
     </div>
@@ -416,59 +417,25 @@
     </div>
     </div>
     <div class="row">
+    @foreach ($dentists as $dentist)
     <div class="col-lg-4 col-md-6">
-    <div class="single-doctor">
-    <a href="dentist-details.html"><img src="assets/images/doctor/doctor-1.jpg" alt="image"></a>
-    <div class="doctor-content">
-    <h3>
-    <a href="dentist-details.html">Dr. Johnson Melbourne</a>
-    </h3>
-    <span>Prosthodontics Dentist</span>
-    <div class="share-link">
-    <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
-    <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
-    <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-    <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-    <div class="single-doctor">
-    <a href="dentist-details.html"><img src="assets/images/doctor/doctor-3.jpg" alt="image"></a>
-    <div class="doctor-content">
-    <h3>
-    <a href="dentist-details.html">Dr. Ena Dicrosa</a>
-    </h3>
-    <span>Aesthetic Dentistry</span>
-    <div class="share-link">
-    <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
-    <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
-    <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-    <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-    <div class="single-doctor">
-    <a href="dentist-details.html"><img src="assets/images/doctor/doctor-2.jpg" alt="image"></a>
-    <div class="doctor-content">
-    <h3>
-     <a href="dentist-details.html">Dr. Addison Smith</a>
-    </h3>
-    <span>Gastroenterologists</span>
-    <div class="share-link">
-    <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
-    <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
-    <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-    <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+        <div class="single-doctor">
+        <a href="dentist-details.html"><img style="width: 402.66px;height:402.66px;" src="assets/images/doctor/{{$dentist->img}}" alt="image"></a>
+        <div class="doctor-content">
+        <h3>
+        <a href="dentist-details.html">{{$dentist->name}}</a>
+        </h3>
+        <span>{{$dentist->job}}</span>
+        <div class="share-link">
+        <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
+        <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
+        <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
+        </div>
+        </div>
+        </div>
+        </div>
+    @endforeach
     </section>
 
 

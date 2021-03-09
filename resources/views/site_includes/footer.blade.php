@@ -114,9 +114,9 @@
     <div class="container">
     <div class="copyright-area-content">
     <p>
-    Copyright © 2021 Grin is proudly created by
-    <a href="https://hibootstrap.com/" target="_blank">
-    HiBootstrap
+    Copyright © 2021 created by
+    <a href="https://www.linkedin.com/in/ameen-kayed-417b0b122" target="_blank">
+    Ameen_Kayed
     </a>
     </p>
     </div>

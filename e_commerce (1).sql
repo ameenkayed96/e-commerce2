@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 04, 2021 at 10:29 AM
+-- Generation Time: Mar 09, 2021 at 02:00 PM
 -- Server version: 5.7.26
 -- PHP Version: 8.0.2
 
@@ -49,6 +49,61 @@ CREATE TABLE IF NOT EXISTS `admins` (
 INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `photo`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'ameen kayed', 'amkyd.99990@gmail.com', NULL, '$2y$10$ic5qMKpjnZgpFGPI/6NcwOatmAkcfQN2rM5H7D6QYq.pxPK8FEv9q', 'amkyd.99990@gmail.com', NULL, '2021-02-14 11:53:09', '2021-02-14 11:53:09'),
 (2, 'ameen kayed', 'amkyd.99999@gmail.com', NULL, '$2y$10$XOTpqeuwukFs34HefZSA/.CySjWFet90VMhUkBCHcTvxgGUBYBnUW', 'amkyd.99990@gmail.com', NULL, '2021-02-15 10:49:52', '2021-02-15 10:49:52');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appointments`
+--
+
+DROP TABLE IF EXISTS `appointments`;
+CREATE TABLE IF NOT EXISTS `appointments` (
+  `id` int(11) NOT NULL,
+  `doc_id` int(11) NOT NULL,
+  `user` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `date` timestamp NOT NULL,
+  `phone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `appointments`
+--
+
+INSERT INTO `appointments` (`id`, `doc_id`, `user`, `date`, `phone`, `name`, `created_at`, `updated_at`) VALUES
+(1, 1, 'as@as.as', '2021-03-11 10:40:50', '', '', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dentists`
+--
+
+DROP TABLE IF EXISTS `dentists`;
+CREATE TABLE IF NOT EXISTS `dentists` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `job` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `facebook` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `twitter` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `dentists`
+--
+
+INSERT INTO `dentists` (`id`, `name`, `job`, `img`, `facebook`, `twitter`, `created_at`, `updated_at`) VALUES
+(1, 'Dr. Johnson Melbourne', 'Prosthodontics Dentist', 'doctor-1.jpg', NULL, NULL, NULL, NULL),
+(2, 'Dr. Ena Dicrosa', 'Aesthetic Dentistry', 'doctor-3.jpg', NULL, NULL, NULL, NULL),
+(3, 'Dr. Addison Smith', 'Gastroenterologists', 'doctor-2.jpg', NULL, NULL, NULL, NULL),
+(4, 'Dr. Amee Kayed', 'Aesthetic Dentistry', 'ameen.jpg', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -177,6 +232,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `admin` int(11) NOT NULL DEFAULT '0',
+  `phone` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -185,11 +241,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`) VALUES
-(1, 'ameen', 'amkyd.99990@gmail.com', NULL, '$2y$10$89AhYsfQSQqCRQDDRybS3uNye/dmtDZS4yuUxR4cDP5DUXyh53IKW', NULL, '2021-02-15 10:17:19', '2021-02-15 10:17:19', 0),
-(2, 'ahmad', 'ac@cc.com', NULL, '$2y$10$PKgrgWUW0RL0CMpoSYEGcefZNG3GXKHdRycboYqPM6WCSiFn5SXvC', NULL, '2021-02-25 08:19:30', '2021-02-25 08:19:30', 0),
-(3, 'as', 'as@as.as', NULL, '$2y$10$.oEM8Ro6K5yJqJLHILLVdumuTvMMnA03IlldNGcwjC7YqXpqHaLWi', NULL, '2021-02-25 08:32:59', '2021-02-25 08:32:59', 0),
-(4, 'ws', 'ws@ws.ws', NULL, '$2y$10$AUJWg5BLwS1uEKJpdWv4AeJLx20izaL.Ms0iZ86CPprbdwQBpDRou', NULL, '2021-02-25 08:45:01', '2021-02-25 08:45:01', 1);
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`, `phone`) VALUES
+(1, 'ameen', 'amkyd.99990@gmail.com', NULL, '$2y$10$89AhYsfQSQqCRQDDRybS3uNye/dmtDZS4yuUxR4cDP5DUXyh53IKW', NULL, '2021-02-15 10:17:19', '2021-02-15 10:17:19', 0, NULL),
+(2, 'ahmad', 'ac@cc.com', NULL, '$2y$10$PKgrgWUW0RL0CMpoSYEGcefZNG3GXKHdRycboYqPM6WCSiFn5SXvC', NULL, '2021-02-25 08:19:30', '2021-02-25 08:19:30', 0, NULL),
+(3, 'as', 'as@as.as', NULL, '$2y$10$.oEM8Ro6K5yJqJLHILLVdumuTvMMnA03IlldNGcwjC7YqXpqHaLWi', NULL, '2021-02-25 08:32:59', '2021-02-25 08:32:59', 0, '0962298812'),
+(4, 'ws', 'ws@ws.ws', NULL, '$2y$10$AUJWg5BLwS1uEKJpdWv4AeJLx20izaL.Ms0iZ86CPprbdwQBpDRou', NULL, '2021-02-25 08:45:01', '2021-02-25 08:45:01', 1, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
