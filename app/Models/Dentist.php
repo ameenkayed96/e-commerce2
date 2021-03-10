@@ -18,6 +18,12 @@ class Dentist extends Model
         'twitter',
         'created_at',
         'updated_at',
+        'Qualification',
+        'Certification',
+        'Professional_Skills',
+        'Education',
+        'Awards',
+        'bio'
     ];
     public function appointment()
     {

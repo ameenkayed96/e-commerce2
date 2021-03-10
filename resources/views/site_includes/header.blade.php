@@ -4,7 +4,16 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link  href="node_modules/pickerjs/src/css/picker.css" rel="stylesheet">
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="node_modules/pickerjs/src/js/picker.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 
 <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
@@ -28,7 +37,7 @@
 <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
 <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-<title>Grin - Dentist & Dental Clinic HTML Template</title>
+<title>Dental Clinic</title>
 <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
 
 
@@ -68,6 +77,7 @@
         <div class="row align-items-center">
         <div class="col-lg-6 col-md-12">
         <ul class="top-header-information">
+        @if(Auth::user()!=null)
         <li>
         <i class='bx bx-user'></i>
         {{Auth::User()->name}}
@@ -76,6 +86,7 @@
         <i class='bx bx-envelope-open'></i>
         <a><span class="__cf_email__" data-cfemail="bdcec8cdcdd2cfc9fddacfd4d393ded2d0">{{Auth::User()->email}}</span></a>
         </li>
+        @endif
         </ul>
         </div>
         <div class="col-lg-6 col-md-12">
@@ -116,7 +127,7 @@
         <div class="col-lg-4 col-md-12">
         <div class="middle-header">
         <h1>
-        <a href="index.html">Grin</a>
+        <a href="{{url('/')}}">Dental Clinic</a>
         </h1>
         </div>
         </div>
@@ -125,7 +136,7 @@
         <li>
         <i class="flaticon-emergency-call"></i>
         Call Today
-        <span><a href="tel:088123654987">+088 123 654 987</a></span>
+        <span><a href="tel:088123654987">+963 962 298 812</a></span>
         </li>
         <li>
         <i class="flaticon-wall-clock"></i>
@@ -157,7 +168,7 @@
         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
         <ul class="navbar-nav">
         <li class="nav-item">
-        <a href="{{url('/home')}}" class="nav-link active">
+        <a href="{{url('/')}}" class="nav-link active">
         Home
 
         </a>
@@ -167,77 +178,18 @@
         <a href="{{url('/about')}}" class="nav-link">About Us</a>
         </li>
         <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="{{url('/doctors')}}" class="nav-link">
         Dentist
-        <i class='bx bx-caret-down'></i>
         </a>
-        <ul class="dropdown-menu">
-        <li class="nav-item">
-        <a href="dentist.html" class="nav-link">Dentist</a>
+
         </li>
         <li class="nav-item">
-        <a href="dentist-details.html" class="nav-link">Dentist Details</a>
-        </li>
-        </ul>
-        </li>
-        <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="{{url('/services')}}" class="nav-link">
         Services
-        <i class='bx bx-caret-down'></i>
         </a>
-        <ul class="dropdown-menu">
-        <li class="nav-item">
-        <a href="services.html" class="nav-link">Services</a>
+
         </li>
-        <li class="nav-item">
-        <a href="services-details.html" class="nav-link">Services Details</a>
-        </li>
-        </ul>
-        </li>
-        <li class="nav-item">
-        <a href="#" class="nav-link">
-        Pages
-        <i class='bx bx-caret-down'></i>
-        </a>
-        <ul class="dropdown-menu">
-        <li class="nav-item">
-        <a href="about-us.html" class="nav-link">About Us</a>
-        </li>
-        <li class="nav-item">
-        <a href="appointment.html" class="nav-link">Appointment</a>
-        </li>
-        <li class="nav-item">
-        <a href="pricing.html" class="nav-link">Pricing</a>
-        </li>
-        <li class="nav-item">
-        <a href="testimonials.html" class="nav-link">Testimonials</a>
-        </li>
-        <li class="nav-item">
-        <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
-        <li class="nav-item">
-        <a href="login.html" class="nav-link">Login</a>
-        </li>
-        <li class="nav-item">
-        <a href="register.html" class="nav-link">Register</a>
-        </li>
-        <li class="nav-item">
-        <a href="faq.html" class="nav-link">FAQ</a>
-        </li>
-        <li class="nav-item">
-        <a href="error-404.html" class="nav-link">404 Error</a>
-        </li>
-        <li class="nav-item">
-        <a href="terms-of-service.html" class="nav-link">Terms of Service</a>
-        </li>
-        <li class="nav-item">
-        <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
-        </li>
-        <li class="nav-item">
-        <a href="coming-soon.html" class="nav-link">Coming Soon</a>
-        </li>
-        </ul>
-        </li>
+
         <li class="nav-item">
         <a href="#" class="nav-link">
         Blog
@@ -253,7 +205,7 @@
         </ul>
         </li>
         <li class="nav-item">
-        <a href="contact-us.html" class="nav-link">Contact Us</a>
+        <a href="{{url('/contact_us')}}" class="nav-link">Contact Us</a>
         </li>
         </ul>
         <div class="others-options d-flex align-items-center">

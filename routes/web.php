@@ -20,9 +20,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [App\Http\Controllers\admin\dashboardController::class, 'admin'])->name('admin.dashboard');
 Route::get('/about',[App\Http\Controllers\Site\SiteController::class, 'about'])->name('about');
 Route::get('/services_details',[App\Http\Controllers\Site\SiteController::class, 'services_details'])->name('ser_det');
 Route::get('/appointment',[App\Http\Controllers\Site\SiteController::class, 'appointment'])->name('appointment') -> middleware('auth');
 Route::post('/booking',[App\Http\Controllers\Site\SiteController::class, 'bookings'])->name('booking');
+Route::get('/doctors',[App\Http\Controllers\Site\SiteController::class, 'doctors'])->name('doctors');
+Route::get('/services',[App\Http\Controllers\Site\SiteController::class, 'services'])->name('services');
+Route::get('/contact_us',[App\Http\Controllers\Site\SiteController::class, 'contact_us'])->name('contact_us');
+Route::post('/sendMessage',[App\Http\Controllers\Site\SiteController::class, 'sendMessage'])->name('sendMessage');
+Route::get('/doc_det/{id}',[App\Http\Controllers\Site\SiteController::class, 'doc_det'])->name('doc_det');
+Route::get('/testdet',[App\Http\Controllers\Site\SiteController::class, 'det']);

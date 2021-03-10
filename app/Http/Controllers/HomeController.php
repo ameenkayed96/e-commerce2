@@ -22,7 +22,8 @@ class HomeController extends Controller
     public function index()
     {
         // dd(auth()->user());.0
-        $dentists = Dentist::all();
+        $dentists = Dentist::paginate(3);
+        //dd( $dentists);
     //dd($dentists[0]->appointment);
         return view('site.index',compact('dentists'));
     }
