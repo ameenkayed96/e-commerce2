@@ -45,14 +45,15 @@ class SiteController extends Controller
     public function doc_det($id)
     {
 
-        $dentist = Dentist::findorfail($id);
-        return view('site.doc_det');
+        //dd($id);
+         $dentist = Dentist::findorfail($id);
+        return view('site.test',compact('dentist'));
     }
 
-    public function det()
+    public function det($id)
     {
-
-        return view('site.doc_det');
+        $dd = Dentist::findorfail($id);
+        return view('site.doc_det',compact('dd'));
     }
     public function sendMessage(Request $request)
     {

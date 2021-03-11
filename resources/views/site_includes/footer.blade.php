@@ -8,10 +8,10 @@
     </h2>
     <p>Lorem ipsum dolor sit amet consectetur elit sed do eiusmod tempor ut labore dolore magna</p>
     <div class="signature">
-    <img src="assets/images/footer/signature.png" alt="image">
+    <img src="{{asset('assets/images/footer/signature.png')}}" alt="image">
     </div>
     <div class="footer-info">
-    <img src="assets/images/footer/footer-1.jpg" alt="image">
+    <img src="{{asset('assets/images/footer/footer-1.jpg')}}" alt="image">
     <h4>Dr. Thomas Albin</h4>
     <span>CEO & Founder</span>
     </div>

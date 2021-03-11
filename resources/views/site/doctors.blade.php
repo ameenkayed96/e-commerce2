@@ -50,7 +50,7 @@
       @foreach ($dentists as $dentist)
       <div class="col-lg-4 col-md-6">
          <div class="single-doctor">
-            <a href=""><img style="width: 402.66px;height:402.66px;" src="assets/images/doctor/{{$dentist->img}}" alt="image"></a>
+            <a href=""><img style="width: 402.66px;height:402.66px;" src="{{asset('assets/images/doctor/'.$dentist->img)}}" alt="image"></a>
             <div class="doctor-content">
                <h3>
                   <a href="{{url('/doc_det/'.$dentist->id)}}">{{$dentist->name}}</a>

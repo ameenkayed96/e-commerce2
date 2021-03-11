@@ -27,7 +27,7 @@
         <div class="col-lg-7 col-md-6">
         <div class="dentist-details-content">
         <h3>
-        <a href="dentist-details.html">Dr. Johnson Melbourne</a>
+        <a href="dentist-details.html">{{$dd->name}}</a>
         </h3>
         <span>Prosthodontics Dentist</span>
         <div class="share-link">

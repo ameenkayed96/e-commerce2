@@ -32,7 +32,7 @@
 
 <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
 
-<link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css"')}}>
+<link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css"')}}">
 
 <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
@@ -42,7 +42,7 @@
 
 
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="assets/css/animate.min.css">
 
@@ -62,17 +62,12 @@
 
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css"> --}}
 
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    {{-- <link rel="stylesheet" href="assets/css/responsive.css"> --}}
     <title>Dental Clinic</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    </head>
-
-
-
-
-        <div class="top-header-area">
+    <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
+    <div class="top-header-area">
         <div class="container">
         <div class="row align-items-center">
         <div class="col-lg-6 col-md-12">
@@ -84,7 +79,16 @@
         </li>
         <li>
         <i class='bx bx-envelope-open'></i>
-        <a><span class="__cf_email__" data-cfemail="bdcec8cdcdd2cfc9fddacfd4d393ded2d0">{{Auth::User()->email}}</span></a>
+        <a><span  class="__cf_email__" data-cfemail="bdcec8cdcdd2cfc9fddacfd4d393ded2d0">{{Auth::User()->email}}</span></a>
+        </li>
+        <li>
+            <i class='bx bx-log-out'></i>
+            <a  href="{{url('/logout')}}"><span class="__cf_email__" data-cfemail="bdcec8cdcdd2cfc9fddacfd4d393ded2d0">LogOut</span></a>
+        </li>
+        @else
+        <li>
+            <i class='bx bx-log-in'></i>
+            <a  href="{{url('/login')}}"><span class="__cf_email__" data-cfemail="bdcec8cdcdd2cfc9fddacfd4d393ded2d0">LogIn</span></a>
         </li>
         @endif
         </ul>
@@ -256,3 +260,9 @@
         </div>
         </div>
         </div>
+
+    </head>
+
+
+
+

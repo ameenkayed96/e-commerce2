@@ -31,4 +31,11 @@ Route::get('/services',[App\Http\Controllers\Site\SiteController::class, 'servic
 Route::get('/contact_us',[App\Http\Controllers\Site\SiteController::class, 'contact_us'])->name('contact_us');
 Route::post('/sendMessage',[App\Http\Controllers\Site\SiteController::class, 'sendMessage'])->name('sendMessage');
 Route::get('/doc_det/{id}',[App\Http\Controllers\Site\SiteController::class, 'doc_det'])->name('doc_det');
-Route::get('/testdet',[App\Http\Controllers\Site\SiteController::class, 'det']);
+Route::get('/testdet/{id}',[App\Http\Controllers\Site\SiteController::class, 'det']);
+Route::get('/logout',function(){
+
+    Auth::logout();
+    session()->flush();
+    session()->regenerate();
+    return redirect('/');
+});

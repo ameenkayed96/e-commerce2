@@ -36,7 +36,7 @@ class LoginController extends Controller
         //    dd(auth()->user());
             return '/admin';
         }
-        return '/home';
+        return '/';
     }
 
     /**
