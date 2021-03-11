@@ -80,7 +80,7 @@
              <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-fun-fact">
                    <h3>
-                      <span class="odometer" data-count="549">00</span>
+                      <span class="odometer" data-count="549">15</span>
                    </h3>
                    <p>Expert Doctors</p>
                 </div>
@@ -88,7 +88,7 @@
              <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-fun-fact">
                    <h3>
-                      <span class="odometer" data-count="867">00</span>
+                      <span class="odometer" data-count="867">86</span>
                    </h3>
                    <p>Problem Solve</p>
                 </div>
@@ -96,7 +96,7 @@
              <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-fun-fact">
                    <h3>
-                      <span class="odometer" data-count="169">00</span>
+                      <span class="odometer" data-count="169">70</span>
                    </h3>
                    <p>Award Winning</p>
                 </div>
@@ -104,7 +104,7 @@
              <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-fun-fact">
                    <h3>
-                      <span class="odometer" data-count="79">00</span>
+                      <span class="odometer" data-count="79">74</span>
                    </h3>
                    <p>Experiences</p>
                 </div>
@@ -113,78 +113,44 @@
        </div>
     </section>
     <section class="doctor-area pt-100 pb-70">
-       <div class="container">
-          <div class="row align-items-center">
-             <div class="col-lg-5">
-                <div class="section-title-warp">
-                   <span class="sub-title">
-                   <i class="flaticon-hashtag-symbol"></i>
-                   Our Dentist
-                   </span>
-                   <h2>Our Specialized and Experienced Dentist</h2>
-                </div>
-             </div>
-             <div class="col-lg-7">
-                <div class="section-warp-btn">
-                   <a href="dentist.html" class="default-btn">View All</a>
-                </div>
-             </div>
-          </div>
-          <div class="row">
-             <div class="col-lg-4 col-md-6">
-                <div class="single-doctor">
-                   <a href="dentist-details.html"><img src="{{asset('assets/images/doctor/doctor-1.jpg')}}" alt="image"></a>
-                   <div class="doctor-content">
-                      <h3>
-                         <a href="dentist-details.html">Dr. Johnson Melbourne</a>
-                      </h3>
-                      <span>Prosthodontics Dentist</span>
-                      <div class="share-link">
-                         <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
-                         <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
-                         <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                         <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-lg-4 col-md-6">
-                <div class="single-doctor">
-                   <a href="dentist-details.html"><img src="{{asset('assets/images/doctor/doctor-2.jpg')}}" alt="image"></a>
-                   <div class="doctor-content">
-                      <h3>
-                         <a href="dentist-details.html">Dr. Ena Dicrosa</a>
-                      </h3>
-                      <span>Aesthetic Dentistry</span>
-                      <div class="share-link">
-                         <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
-                         <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
-                         <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                         <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-                <div class="single-doctor">
-                   <a href="dentist-details.html"><img src="{{asset('assets/images/doctor/doctor-3.jpg')}}" alt="image"></a>
-                   <div class="doctor-content">
-                      <h3>
-                         <a href="dentist-details.html">Dr. Addison Smith</a>
-                      </h3>
-                      <span>Gastroenterologists</span>
-                      <div class="share-link">
-                         <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
-                         <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
-                         <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                         <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
+        <div class="container">
+        <div class="row align-items-center">
+           <div class="col-lg-5">
+              <div class="section-title-warp">
+                 <span class="sub-title">
+                 <i class="flaticon-hashtag-symbol"></i>
+                 Our Dentist
+                 </span>
+                 <h2>Our Specialized and Experienced Dentist</h2>
+              </div>
+           </div>
+           <div class="col-lg-7">
+              <div class="section-warp-btn">
+                 <a href="{{url('/doctors')}}" class="default-btn">View All</a>
+              </div>
+           </div>
+        </div>
+        <div class="row">
+        @foreach ($dentists as $dentist)
+        <div class="col-lg-4 col-md-6">
+           <div class="single-doctor">
+              <a href="dentist-details.html"><img style="width: 402.66px;height:402.66px;" src="assets/images/doctor/{{$dentist->img}}" alt="image"></a>
+              <div class="doctor-content">
+                 <h3>
+                    <a href="dentist-details.html">{{$dentist->name}}</a>
+                 </h3>
+                 <span>{{$dentist->job}}</span>
+                 <div class="share-link">
+                    <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                 </div>
+              </div>
+           </div>
+        </div>
+        @endforeach
+     </section>
     <section class="pricing-area pt-100 pb-70">
        <div class="container">
           <div class="tab pricing-list-tab">

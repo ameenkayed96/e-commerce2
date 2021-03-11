@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Dentist;
 use App\Models\Services;
+use App\Models\Participation;
+use App\Models\Participation_services;
+
 use App\Models\Messages;
 use Illuminate\Contracts\Session\Session;
 
@@ -14,7 +17,9 @@ class SiteController extends Controller
 {
     //
     public function about(){
-        return view('site.about');
+        $dentists = Dentist::paginate(3);
+        $participation = Participation::all();
+        return view('site.about',compact('dentists'));
     }
 
     public function services_details(){
