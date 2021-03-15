@@ -128,10 +128,17 @@
                <div class="form-group">
                   <input type="text" name="phone" value="{{Auth::user()->phone}}" class="form-control" placeholder="Phone">
                </div>
-               <div class="form-group">
-                <input type="datetime-local" class="form-control" id="birthdaytime" name="date">
+               <select name="date" class="form-group" aria-label=".form-select-lg example">
+                <option selected>Select Doctor</option>
+                @foreach ($dentists as $dentist)
+                <option value="{{$dentist->id}}">{{$dentist->name}}</option>
 
-            </div>
+                @endforeach
+
+              </select>
+               {{-- <div class="form-group">
+                <input type="datetime-local" class="form-control" id="birthdaytime" name="date">
+               </div> --}}
                <button type="submit" class="default-btn">Book Appointment</button>
             </form>
          </div>

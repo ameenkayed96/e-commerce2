@@ -403,115 +403,29 @@
                   <i class="flaticon-hashtag-symbol"></i>
                   Our Clients Review
                   </span>
-                  <h2>Real Review From Our Real Customer</h2>
+                  <h2>Real Review From Our Real Custsadsdomer</h2>
                </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7" >
                <div class="section-warp-btn">
                   <a href="testimonials.html" class="default-btn">View All</a>
                </div>
             </div>
          </div>
-         <div class="review-slides owl-carousel owl-theme">
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-1.jpg" alt="image">
-                  <h3>Dr. Sarah Taylor</h3>
-                  <span>Nephrologists</span>
-               </div>
-            </div>
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-2.jpg" alt="image">
-                  <h3>Dr. Aiken Ward</h3>
-                  <span>Endocrinologists</span>
-               </div>
-            </div>
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-3.jpg" alt="image">
-                  <h3>Dr. Eachann Jhon</h3>
-                  <span>Cardiologists</span>
-               </div>
-            </div>
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-1.jpg" alt="image">
-                  <h3>Dr. Sarah Taylor</h3>
-                  <span>Nephrologists</span>
-               </div>
-            </div>
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-2.jpg" alt="image">
-                  <h3>Dr. Aiken Ward</h3>
-                  <span>Endocrinologists</span>
-               </div>
-            </div>
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-3.jpg" alt="image">
-                  <h3>Dr. Eachann Jhon</h3>
-                  <span>Cardiologists</span>
-               </div>
-            </div>
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-1.jpg" alt="image">
-                  <h3>Dr. Sarah Taylor</h3>
-                  <span>Nephrologists</span>
-               </div>
-            </div>
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-2.jpg" alt="image">
-                  <h3>Dr. Aiken Ward</h3>
-                  <span>Endocrinologists</span>
-               </div>
-            </div>
-            <div class="single-review-item">
-               <div class="icon">
-                  <i class="flaticon-left-quote"></i>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               <div class="review-info">
-                  <img src="assets/images/review/review-3.jpg" alt="image">
-                  <h3>Dr. Eachann Jhon</h3>
-                  <span>Cardiologists</span>
-               </div>
-            </div>
+         <div class="review-slides owl-carousel owl-theme"  >
+             @foreach ($dentist_revs as $dentist_rev)
+             <div class="single-review-item" style="height: 400px">
+                <div class="icon">
+                   <i class="flaticon-left-quote"></i>
+                </div>
+                <p>{{$dentist_rev->rev_text}}</p>
+                <div class="review-info">
+                   <img src="assets/images/review/review-3.jpg" alt="image">
+                   <h3>{{$dentist_rev->Dentist->name}}</h3>
+                   <span>{{$dentist_rev->Dentist->job}}</span>
+                </div>
+             </div>
+             @endforeach
          </div>
       </div>
    </section>
@@ -529,89 +443,44 @@
             </div>
             <div class="col-lg-7">
                <div class="section-warp-btn">
-                  <a href="blog.html" class="default-btn">View All</a>
+                  <a href="{{url('/blogs')}}" class="default-btn">View All</a>
                </div>
             </div>
          </div>
          <div class="row">
-            <div class="col-lg-4 col-md-6">
-               <div class="single-blog">
-                  <div class="blog-image">
-                     <a href="blog-details.html"><img src="assets/images/blog/blog-1.jpg" alt="image"></a>
-                     <div class="tag">10 Jun</div>
-                     <div class="tag-two"><a href="blog.html">Technology</a></div>
-                  </div>
-                  <div class="blog-content">
-                     <h3>
-                        <a href="blog-details.html">New Technology Make for Dental Operation</a>
-                     </h3>
-                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
-                     <a href="blog-details.html" class="blog-btn">Read More</a>
-                     <ul class="entry-meta">
-                        <li>
-                           <i class='bx bxs-user'></i>
-                           <span>By <a href="blog-right-sidebar.html">Daisy Gabriela</a></span>
-                        </li>
-                        <li>
-                           <i class='bx bxs-comment'></i>
-                           2 Comments
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-               <div class="single-blog">
-                  <div class="blog-image">
-                     <a href="blog-details.html"><img src="assets/images/blog/blog-2.jpg" alt="image"></a>
-                     <div class="tag">11 Jun</div>
-                     <div class="tag-two"><a href="blog.html">Dental</a></div>
-                  </div>
-                  <div class="blog-content">
-                     <h3>
-                        <a href="blog-details.html">Regular Dental care make Your Smile Brighter</a>
-                     </h3>
-                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
-                     <a href="blog-details.html" class="blog-btn">Read More</a>
-                     <ul class="entry-meta">
-                        <li>
-                           <i class='bx bxs-user'></i>
-                           <span>By <a href="blog-right-sidebar.html">Ronnie Aaron</a></span>
-                        </li>
-                        <li>
-                           <i class='bx bxs-comment'></i>
-                           2 Comments
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-               <div class="single-blog">
-                  <div class="blog-image">
-                     <a href="blog-details.html"><img src="assets/images/blog/blog-3.jpg" alt="image"></a>
-                     <div class="tag">12 Jun</div>
-                     <div class="tag-two"><a href="blog.html">Hygiene</a></div>
-                  </div>
-                  <div class="blog-content">
-                     <h3>
-                        <a href="blog-details.html">Dental Hygiene for All Age to Make Smile</a>
-                     </h3>
-                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
-                     <a href="blog-details.html" class="blog-btn">Read More</a>
-                     <ul class="entry-meta">
-                        <li>
-                           <i class='bx bxs-user'></i>
-                           <span>By <a href="blog-right-sidebar.html">Babatunde Jon</a></span>
-                        </li>
-                        <li>
-                           <i class='bx bxs-comment'></i>
-                           2 Comments
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
+             @foreach ($blogs  as $blog)
+             <div class="col-lg-4 col-md-6">
+                <div class="single-blog">
+                   <div class="blog-image">
+                    @php
+                    $createdAt = Carbon\Carbon::parse($blog['updated_at']);
+                    $suborder = $createdAt->format('M d');
+                    @endphp
+                      <a href="blog-details.html"><img src="assets/images/blog/{{$blog->img}}" alt="image"></a>
+                      <div class="tag">{{$suborder}}</div>
+                      <div class="tag-two"><a href="blog.html">{{$blog->category}}</a></div>
+                   </div>
+                   <div class="blog-content">
+                      <h3>
+                         <a href="blog-details.html">{{$blog->title}}</a>
+                      </h3>
+                      <p>{{$blog->short_desc}}</p>
+                      <a href="blog-details.html" class="blog-btn">Read More</a>
+                      <ul class="entry-meta">
+                         <li>
+                            <i class='bx bxs-user'></i>
+                            <span>By <a href="blog-right-sidebar.html">{{$blog->created_by}}</a></span>
+                         </li>
+                         <li>
+                            <i class='bx bxs-comment'></i>
+                            2 Likes
+                         </li>
+                      </ul>
+                   </div>
+                </div>
+             </div>
+             @endforeach
+
          </div>
       </div>
    </section>

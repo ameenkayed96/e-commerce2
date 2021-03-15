@@ -17,7 +17,7 @@
         <div class="row align-items-center">
         <div class="col-lg-5 col-md-6">
         <div class="dentist-details-image">
-        <img src="{{asset('assets/images/doctor/'.$dentist->img)}}" alt="image">
+        <img src="{{asset('assets/images/doctor/'.$dentist->img)}}" style="height: 518px; width: 518px;" alt="image">
         </div>
         </div>
         <div class="col-lg-7 col-md-6">

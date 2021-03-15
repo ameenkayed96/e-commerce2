@@ -5,21 +5,35 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
+use App\Models\Blogs;
 use App\Models\Dentist;
 use App\Models\Services;
 use App\Models\Participation;
 use App\Models\Participation_services;
 
 use App\Models\Messages;
+use App\Models\Review;
 use Illuminate\Contracts\Session\Session;
 
 class SiteController extends Controller
 {
+
+
+    // public $dentist = Dentist::all();
     //
     public function about(){
-        $dentists = Dentist::paginate(3);
-        $participation = Participation::all();
-        return view('site.about',compact('dentists'));
+        // $dentist = Dentist::with('reviews')->find(1);
+        // // dd($dentists->load('reviews'));
+        // dd($dentist);
+        $dentist_revs = Review::with('Dentist')->get();
+        $dentists = Dentist::limit(3)->get();
+        $parts = Participation::with('participation_services')->get();
+        //$participation_services = Participation_services::first();
+// dd( $dentist_revs);
+        // $participation -> load(['participation_services']);
+    //    $parts = $participation -> load(['participation_services']);
+       //dd($part);
+        return view('site.about',compact('dentists','parts','dentist_revs'));
     }
 
     public function services_details(){
@@ -27,13 +41,21 @@ class SiteController extends Controller
     }
 
     public function appointment(){
-        return view('site.appointment');
+        $dentists = Dentist::all();
+        return view('site.appointment',compact('dentists'));
     }
 
     public function doctors()
     {
         $dentists = Dentist::all();
         return view('site.doctors',compact('dentists'));
+    }
+
+    public function reviews()
+    {
+        $reviews = Review::with('Dentist')->get();
+        // dd($reviews);
+        return view('site.reviews',compact('reviews'));
     }
 
     public function services()
@@ -59,6 +81,12 @@ class SiteController extends Controller
     {
         $dd = Dentist::findorfail($id);
         return view('site.doc_det',compact('dd'));
+    }
+
+    public function blogs()
+    {
+        $blogs = Blogs::all();
+        return view('site.blog',compact('blogs'));
     }
     public function sendMessage(Request $request)
     {

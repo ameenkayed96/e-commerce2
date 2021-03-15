@@ -32,8 +32,10 @@ Route::get('/contact_us',[App\Http\Controllers\Site\SiteController::class, 'cont
 Route::post('/sendMessage',[App\Http\Controllers\Site\SiteController::class, 'sendMessage'])->name('sendMessage');
 Route::get('/doc_det/{id}',[App\Http\Controllers\Site\SiteController::class, 'doc_det'])->name('doc_det');
 Route::get('/testdet/{id}',[App\Http\Controllers\Site\SiteController::class, 'det']);
-Route::get('/logout',function(){
+Route::get('/blogs',[App\Http\Controllers\Site\SiteController::class, 'blogs'])->name('blogs');
+Route::get('/reviews',[App\Http\Controllers\Site\SiteController::class, 'reviews'])->name('reviews');
 
+Route::get('/logout',function(){
     Auth::logout();
     session()->flush();
     session()->regenerate();

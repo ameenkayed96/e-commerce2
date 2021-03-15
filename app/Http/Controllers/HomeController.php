@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blogs;
 use Illuminate\Http\Request;
 use App\Models\Dentist;
-
+use App\Models\Review;
 
 class HomeController extends Controller
 {
@@ -21,11 +22,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // dd(auth()->user());.0
-        $dentists = Dentist::paginate(3);
-        //dd( $dentists);
-    //dd($dentists[0]->appointment);
-        return view('site.index',compact('dentists'));
+        $blogs = Blogs::limit(3)->get();
+        $dentists = Dentist::limit(3)->get();
+        $dentist_revs = Review::with('Dentist')->get();
+        //    dd($dentist_revs);
+        return view('site.index',compact('dentists','dentist_revs','blogs'));
     }
 
 }

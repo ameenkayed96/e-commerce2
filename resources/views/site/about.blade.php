@@ -165,98 +165,35 @@
              <div class="tab_content">
                 <div class="tabs_item">
                    <div class="row">
-                      <div class="col-lg-3 col-sm-6">
-                         <div class="single-pricing-table">
-                            <div class="pricing-header">
-                               <h3>Basic</h3>
-                            </div>
-                            <div class="price">$39</div>
-                            <ul class="pricing-features">
-                               <li>Cancer Services</li>
-                               <li>Cardiovascular Services</li>
-                               <li>Weight Management</li>
-                               <li>Dental Services</li>
-                               <li>Women's Health</li>
-                               <li>Emergency Medicine</li>
-                               <li>Family Medicine</li>
-                               <li class="color-gray"><del>Gynecologic Oncology</del></li>
-                               <li class="color-gray"><del>Neurosurgery</del></li>
-                               <li class="color-gray"><del>Radiation Oncology</del></li>
-                            </ul>
-                            <div class="pricing-btn">
-                               <a href="pricing.html" class="default-btn">Buy Now</a>
-                            </div>
+                       @foreach ($parts as $part)
+                       <div class="col-lg-3 col-sm-6">
+                        <div class="single-pricing-table overflow-auto" style="height: 100%;">
+                           <div class="pricing-header">
+                              <h3>{{$part->name}}</h3>
+                           </div>
+                           <div class="price">${{$part->cost}}</div>
+
+                           <ul class="pricing-features">
+                               @forelse ($part->participation_services as $participation_service)
+                               <li>{{$participation_service->name}}</li>
+                               @empty
+                                    No service now , Comming SoOn
+                               @endforelse
+
+
+                           </ul>
+                           <div class="pricing-btn" style="    bottom: 4%;
+                           position: absolute;
+                           align-items: center;
+                           right: 30%;
+                       }">
+                            <a href="pricing.html" class="default-btn">Buy Now</a>
                          </div>
-                      </div>
-                      <div class="col-lg-3 col-sm-6">
-                         <div class="single-pricing-table">
-                            <div class="pricing-header">
-                               <h3>Standard</h3>
-                            </div>
-                            <div class="price">$59</div>
-                            <ul class="pricing-features">
-                               <li>Cancer Services</li>
-                               <li>Cardiovascular Services</li>
-                               <li>Weight Management</li>
-                               <li>Dental Services</li>
-                               <li>Women's Health</li>
-                               <li>Emergency Medicine</li>
-                               <li>Family Medicine</li>
-                               <li>Gynecologic Oncology</li>
-                               <li class="color-gray"><del>Neurosurgery</del></li>
-                               <li class="color-gray"><del>Radiation Oncology</del></li>
-                            </ul>
-                            <div class="pricing-btn">
-                               <a href="pricing.html" class="default-btn">Buy Now</a>
-                            </div>
-                         </div>
-                      </div>
-                      <div class="col-lg-3 col-sm-6">
-                         <div class="single-pricing-table">
-                            <div class="pricing-header">
-                               <h3>Premium</h3>
-                            </div>
-                            <div class="price">$79</div>
-                            <ul class="pricing-features">
-                               <li>Cancer Services</li>
-                               <li>Cardiovascular Services</li>
-                               <li>Weight Management</li>
-                               <li>Dental Services</li>
-                               <li>Women's Health</li>
-                               <li>Emergency Medicine</li>
-                               <li>Family Medicine</li>
-                               <li>Gynecologic Oncology</li>
-                               <li>Neurosurgery</li>
-                               <li class="color-gray"><del>Radiation Oncology</del></li>
-                            </ul>
-                            <div class="pricing-btn">
-                               <a href="pricing.html" class="default-btn">Buy Now</a>
-                            </div>
-                         </div>
-                      </div>
-                      <div class="col-lg-3 col-sm-6">
-                         <div class="single-pricing-table">
-                            <div class="pricing-header">
-                               <h3>Gold</h3>
-                            </div>
-                            <div class="price">$99</div>
-                            <ul class="pricing-features">
-                               <li>Cancer Services</li>
-                               <li>Cardiovascular Services</li>
-                               <li>Weight Management</li>
-                               <li>Dental Services</li>
-                               <li>Women's Health</li>
-                               <li>Emergency Medicine</li>
-                               <li>Family Medicine</li>
-                               <li>Gynecologic Oncology</li>
-                               <li>Neurosurgery</li>
-                               <li>Radiation Oncology</li>
-                            </ul>
-                            <div class="pricing-btn">
-                               <a href="pricing.html" class="default-btn">Buy Now</a>
-                            </div>
-                         </div>
-                      </div>
+                        </div>
+                     </div>
+                       @endforeach
+
+
                    </div>
                 </div>
                 <div class="tabs_item">
@@ -373,108 +310,7 @@
              </div>
              <div class="col-lg-7">
                 <div class="section-warp-btn">
-                   <a href="testimonials.html" class="default-btn">View All</a>
-                </div>
-             </div>
-          </div>
-          <div class="review-slides owl-carousel owl-theme">
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-1.jpg')}}" alt="image">
-                   <h3>Dr. Sarah Taylor</h3>
-                   <span>Nephrologists</span>
-                </div>
-             </div>
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-2.jpg')}}" alt="image">
-                   <h3>Dr. Aiken Ward</h3>
-                   <span>Endocrinologists</span>
-                </div>
-             </div>
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-3.jpg')}}" alt="image">
-                   <h3>Dr. Eachann Jhon</h3>
-                   <span>Cardiologists</span>
-                </div>
-             </div>
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-1.jpg')}}" alt="image">
-                   <h3>Dr. Sarah Taylor</h3>
-                   <span>Nephrologists</span>
-                </div>
-             </div>
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-2.jpg')}}" alt="image">
-                   <h3>Dr. Aiken Ward</h3>
-                   <span>Endocrinologists</span>
-                </div>
-             </div>
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-3.jpg')}}" alt="image">
-                   <h3>Dr. Eachann Jhon</h3>
-                   <span>Cardiologists</span>
-                </div>
-             </div>
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-1.jpg')}}" alt="image">
-                   <h3>Dr. Sarah Taylor</h3>
-                   <span>Nephrologists</span>
-                </div>
-             </div>
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-2.jpg')}}" alt="image">
-                   <h3>Dr. Aiken Ward</h3>
-                   <span>Endocrinologists</span>
-                </div>
-             </div>
-             <div class="single-review-item">
-                <div class="icon">
-                   <i class="flaticon-left-quote"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="review-info">
-                   <img src="{{asset('assets/images/review/review-3.jpg')}}" alt="image">
-                   <h3>Dr. Eachann Jhon</h3>
-                   <span>Cardiologists</span>
+                   <a href="{{url('/reviews')}}" class="default-btn">View All</a>
                 </div>
              </div>
           </div>
